@@ -12,7 +12,7 @@ Add this to your package's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  flutter_inapp_notifications: ^1.0.0
+  flutter_inapp_notifications: ^1.0.2
 ```
 
 ## Import
@@ -56,7 +56,6 @@ InAppNotifications.show(
       Icons.arrow_right_alt,
       color: Colors.red,
     ),
-    marginTop: 80,
     descriptionWidget: ListTile(
       title: Text('You can pass a descriptionWidget or description of String')
     ),
@@ -98,6 +97,7 @@ InAppNotifications.instance
   ..textColor = Colors.black
   ..backgroundColor = Colors.white
   ..shadow = true
+  ..margin = EdgeInsets.only(top: 56)
   ..animationStyle = InAppNotificationsAnimationStyle.scale;
 
 // Custom animation

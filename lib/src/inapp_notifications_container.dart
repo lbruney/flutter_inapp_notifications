@@ -10,7 +10,6 @@ class InAppNotificationsContainer extends StatefulWidget {
   final Widget? leading;
   final Widget? ending;
   final String? title;
-  final double? marginTop;
   final Widget? descriptionWidget;
   final String? description;
   final VoidCallback? onTap;
@@ -22,7 +21,6 @@ class InAppNotificationsContainer extends StatefulWidget {
     this.leading,
     this.ending,
     this.title,
-    this.marginTop,
     this.descriptionWidget,
     this.description,
     this.onTap,
@@ -98,7 +96,7 @@ class InAppNotificationsContainerState
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: widget.marginTop ?? 40.0),
+      margin: InAppNotificationsTheme.margin,
       child: Stack(
         alignment: AlignmentDirectional.topCenter,
         children: <Widget>[
