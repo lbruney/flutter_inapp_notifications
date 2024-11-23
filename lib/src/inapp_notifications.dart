@@ -119,6 +119,7 @@ class InAppNotifications {
       bool persistent = false}) {
     return _instance._show(
         title: title,
+        descriptionWidget: descriptionWidget,
         description: description,
         leading: leading != null
             ? SizedBox(
