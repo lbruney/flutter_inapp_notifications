@@ -108,6 +108,7 @@ class InAppNotifications {
   static Future<void> show(
       {String? title,
       String? description,
+      double? marginTop,
       Widget? leading,
       Widget? ending,
       VoidCallback? onTap,
@@ -155,6 +156,7 @@ class InAppNotifications {
   Future<void> _show({
     Widget? leading,
     Widget? ending,
+    double? marginTop,
     String? title,
     String? description,
     VoidCallback? onTap,
@@ -182,6 +184,7 @@ class InAppNotifications {
       key: _key,
       title: title,
       description: description,
+      marginTop: marginTop,
       leading: leading,
       ending: ending,
       onTap: onTap,
