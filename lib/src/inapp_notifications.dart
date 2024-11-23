@@ -100,6 +100,8 @@ class InAppNotifications {
   ///
   /// [title] Title of the notification
   /// [description] Description of the notification
+  /// [descriptionWidget] Custom description of the notification widget
+  /// [marginTop] Top spacing of entire notification widget
   /// [leading] Widget show leading the content
   /// [ending] Widget show ending the content
   /// [onTap] Function to be called when gesture onTap is detected
@@ -108,6 +110,7 @@ class InAppNotifications {
   static Future<void> show(
       {String? title,
       String? description,
+      Widget? descriptionWidget,
       double? marginTop,
       Widget? leading,
       Widget? ending,
@@ -158,6 +161,7 @@ class InAppNotifications {
     Widget? ending,
     double? marginTop,
     String? title,
+    Widget? descriptionWidget,
     String? description,
     VoidCallback? onTap,
     Duration? duration,
@@ -183,6 +187,7 @@ class InAppNotifications {
     _container = InAppNotificationsContainer(
       key: _key,
       title: title,
+      descriptionWidget: descriptionWidget,
       description: description,
       marginTop: marginTop,
       leading: leading,

@@ -11,6 +11,7 @@ class InAppNotificationsContainer extends StatefulWidget {
   final Widget? ending;
   final String? title;
   final double? marginTop;
+  final Widget? descriptionWidget;
   final String? description;
   final VoidCallback? onTap;
   final Completer<void>? completer;
@@ -22,6 +23,7 @@ class InAppNotificationsContainer extends StatefulWidget {
     this.ending,
     this.title,
     this.marginTop,
+    this.descriptionWidget,
     this.description,
     this.onTap,
     this.completer,
@@ -118,6 +120,7 @@ class InAppNotificationsContainerState
               return InAppNotificationsTheme.showAnimation.buildWidget(
                 _Notification(
                   title: _title,
+                  descriptionWidget: widget.descriptionWidget,
                   description: _description,
                   leading: widget.leading,
                   ending: widget.ending,
@@ -138,6 +141,7 @@ class _Notification extends StatelessWidget {
   final Widget? leading;
   final Widget? ending;
   final String? title;
+  final Widget? descriptionWidget;
   final String? description;
   final VoidCallback? onTap;
 
@@ -145,6 +149,7 @@ class _Notification extends StatelessWidget {
       {required this.leading,
       required this.ending,
       required this.title,
+      required this.descriptionWidget,
       required this.description,
       required this.onTap});
 
@@ -183,7 +188,11 @@ class _Notification extends StatelessWidget {
                         color: InAppNotificationsTheme.textColor,
                         fontWeight: FontWeight.w600),
                   ),
-                if (description != null)
+                if (descriptionWidget != null)
+                  Flexible(
+                      child: descriptionWidget ?? Container()
+                  ),
+                if (description != null && descriptionWidget == null)
                   Flexible(
                     child: Text(
                       description!,
