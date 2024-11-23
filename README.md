@@ -56,6 +56,10 @@ InAppNotifications.show(
       Icons.arrow_right_alt,
       color: Colors.red,
     ),
+    marginTop: 80,
+    descriptionWidget: ListTile(
+      title: Text('You can pass a descriptionWidget or description of String')
+    ),
     description:
         'This is a very simple notification with leading and ending widget.',
     onTap: () {
